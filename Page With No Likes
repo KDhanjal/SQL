@@ -1,0 +1,14 @@
+/* Assume you're given two tables containing data about Facebook Pages and their respective likes (as in "Like a Facebook Page").
+
+Write a query to return the IDs of the Facebook pages that have zero likes. The output should be sorted in ascending order based on the page IDs. */
+
+SELECT
+  a.page_id
+FROM pages AS a
+
+LEFT JOIN page_likes AS b
+ON a.page_id = b.page_id
+
+WHERE b.page_id IS NULL
+
+ORDER BY a.page_id
